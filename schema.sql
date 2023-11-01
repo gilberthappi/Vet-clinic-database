@@ -1,30 +1,45 @@
 /* Database schema to keep the structure of entire database. */
-DROP TABLE IF EXISTS animals;
+
+CREATE TABLE animals (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(100),
+    date_of_birth DATE,
+    escape_attempts INT,
+    neutered BOOLEAN,
+    weight_kg DECIMAL,
+    PRIMARY KEY(id)
+);
+
+ALTER TABLE animals
+ADD COLUMN species VARCHAR(30);
+
 DROP TABLE IF EXISTS owners;
+CREATE TABLE owners (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  full_name VARCHAR(100),
+  age INT,
+  PRIMARY KEY(id)
+);
+
 DROP TABLE IF EXISTS species;
-
-CREATE TABLE IF NOT EXISTS owners (
-    id SERIAL PRIMARY KEY NOT NULL,
-    full_name VARCHAR(255) NOT NULL,
-    age NUMERIC NOT NULL
+CREATE TABLE species (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(100),
+  PRIMARY KEY(id)
 );
 
-CREATE TABLE IF NOT EXISTS species (
-    id SERIAL PRIMARY KEY NOT NULL,
-    name VARCHAR(255) NOT NULL
-);
+ALTER TABLE animals DROP COLUMN species;
 
-CREATE TABLE IF NOT EXISTS animals (
-    id SERIAL PRIMARY KEY NOT NULL,
-    species_id INT,
-    owners_id INT,
-    name VARCHAR(100) NOT NULL,
-    date_of_birth DATE NOT NULL,
-    escape_attempts NUMERIC NOT NULL,
-    neutered BOOLEAN NOT NULL,
-    weight_kg DECIMAL NOT NULL,
+ALTER TABLE animals
+  ADD COLUMN species_id INT,
+  ADD CONSTRAINT fk_species_id
     FOREIGN KEY (species_id)
-      REFERENCES species (id),
-    FOREIGN KEY (owners_id)
-      REFERENCES owners (id)
-);
+    REFERENCES species(id)
+    ON DELETE CASCADE;
+
+ALTER TABLE animals
+  ADD COLUMN owner_id INT,
+  ADD CONSTRAINT fk_owner_id
+    FOREIGN KEY (owner_id)
+    REFERENCES owners(id)
+    ON DELETE CASCADE;
