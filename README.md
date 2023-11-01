@@ -40,7 +40,6 @@ After you're finished please remove all the comments and instructions!
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -53,7 +52,6 @@ After you're finished please remove all the comments and instructions!
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -61,8 +59,6 @@ After you're finished please remove all the comments and instructions!
 # 📖 **vet_clinic**<a name="about-project"></a>
 
 > This project is about Create database, create table, update element,...
-
-**[your_project__name]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -94,7 +90,8 @@ After you're finished please remove all the comments and instructions!
 ### Prerequisites
 
 In order to run this project you need:
-
+- PgAdmin installed
+- Git bash
 <!--
 Example command:
 
@@ -107,18 +104,16 @@ Example command:
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
 
 ```sh
-  cd my-folder
-  git clone https://github.com/aamirkhan2478/vet_clinic/.git
+  cd Vet-clinic-database
+  git clone https://github.com/gilberthappi/Vet-clinic-database/tree/animal-table
 ```
---->
+
 
 ### Install
 
-Install this project with:
+To install this project simply run the create statements in the schema
 
 <!--
 Example command:
@@ -132,7 +127,7 @@ Example command:
 ### Usage
 
 To run the project, execute the following command:
-
+- Execute the create table commands
 <!--
 Example command:
 
@@ -141,29 +136,7 @@ Example command:
 ```
 --->
 
-### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,7 +158,6 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Update Element]**
 - [ ] **[Delete Element]**
@@ -219,7 +191,7 @@ If you like this project...
 
 
 
-I would like to thank...
+I would like to thank Microverse
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
